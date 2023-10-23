@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="luthfisaiful">
+    <Application name="KNIME" version="4.7.7"/>
+  </Header>
+  <DataDictionary numberOfFields="10">
+    <DataField name="Revenue.All" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1500948.42" rightMargin="1.1301514260000002E7"/>
+    </DataField>
+    <DataField name="BillingDateyearmonth" optype="categorical" dataType="string">
+      <Value value="2020-01"/>
+      <Value value="2020-02"/>
+      <Value value="2020-03"/>
+      <Value value="2020-04"/>
+      <Value value="2020-05"/>
+      <Value value="2020-06"/>
+      <Value value="2020-07"/>
+      <Value value="2020-08"/>
+      <Value value="2020-09"/>
+      <Value value="2020-10"/>
+      <Value value="2020-11"/>
+      <Value value="2020-12"/>
+      <Value value="2021-01"/>
+      <Value value="2021-02"/>
+      <Value value="2021-03"/>
+      <Value value="2021-04"/>
+      <Value value="2021-05"/>
+      <Value value="2021-06"/>
+      <Value value="2021-07"/>
+      <Value value="2021-08"/>
+      <Value value="2021-09"/>
+      <Value value="2021-10"/>
+      <Value value="2021-11"/>
+      <Value value="2021-12"/>
+      <Value value="2022-01"/>
+      <Value value="2022-02"/>
+      <Value value="2022-03"/>
+      <Value value="2022-04"/>
+      <Value value="2022-05"/>
+      <Value value="2022-06"/>
+      <Value value="2022-07"/>
+      <Value value="2022-08"/>
+      <Value value="2022-09"/>
+      <Value value="2022-10"/>
+      <Value value="2022-11"/>
+      <Value value="2022-12"/>
+      <Value value="2023-01"/>
+      <Value value="2023-02"/>
+      <Value value="2023-03"/>
+      <Value value="2023-04"/>
+      <Value value="2023-05"/>
+      <Value value="2023-06"/>
+      <Value value="2023-07"/>
+      <Value value="2023-08"/>
+    </DataField>
+    <DataField name="Sum(Qty)" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="29.0" rightMargin="1190.0"/>
+    </DataField>
+    <DataField name="Sum(PC)" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="61.0"/>
+    </DataField>
+    <DataField name="Sum(TB)" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="8.0" rightMargin="741.0"/>
+    </DataField>
+    <DataField name="Sum(EM)" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="19.0" rightMargin="792.0"/>
+    </DataField>
+    <DataField name="Mean(KursJual)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="13822.949868421052" rightMargin="15750.300223880597"/>
+    </DataField>
+    <DataField name="Revenue.Mich" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="215384.30999999994" rightMargin="9923745.960000003"/>
+    </DataField>
+    <DataField name="Count(PODate)" optype="continuous" dataType="integer">
+      <Interval closure="closedClosed" leftMargin="13.0" rightMargin="160.0"/>
+    </DataField>
+    <DataField name="Mean(Leadtime)" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="294.11334267887395" rightMargin="298.98283461102704"/>
+    </DataField>
+  </DataDictionary>
+  <RegressionModel functionName="regression" algorithmName="PolynomialRegression" modelName="KNIME Polynomial Regression" targetFieldName="Revenue.All">
+    <MiningSchema>
+      <MiningField name="Sum(Qty)" invalidValueTreatment="asIs"/>
+      <MiningField name="Sum(EM)" invalidValueTreatment="asIs"/>
+      <MiningField name="Count(PODate)" invalidValueTreatment="asIs"/>
+      <MiningField name="Mean(Leadtime)" invalidValueTreatment="asIs"/>
+      <MiningField name="Revenue.All" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <RegressionTable intercept="5.801942354831845E14">
+      <NumericPredictor name="Sum(Qty)" coefficient="-56179.43360900879"/>
+      <NumericPredictor name="Sum(Qty)" exponent="2" coefficient="120.9627159104275"/>
+      <NumericPredictor name="Sum(Qty)" exponent="3" coefficient="-0.11483377296584951"/>
+      <NumericPredictor name="Sum(Qty)" exponent="4" coefficient="4.0736790109343394E-5"/>
+      <NumericPredictor name="Sum(EM)" coefficient="29144.775844573975"/>
+      <NumericPredictor name="Sum(EM)" exponent="2" coefficient="-187.28352983505465"/>
+      <NumericPredictor name="Sum(EM)" exponent="3" coefficient="0.3730101904976184"/>
+      <NumericPredictor name="Sum(EM)" exponent="4" coefficient="-2.2567750249637153E-4"/>
+      <NumericPredictor name="Count(PODate)" coefficient="7277.2686767578125"/>
+      <NumericPredictor name="Count(PODate)" exponent="2" coefficient="3399.873695474118"/>
+      <NumericPredictor name="Count(PODate)" exponent="3" coefficient="-33.30644644997403"/>
+      <NumericPredictor name="Count(PODate)" exponent="4" coefficient="0.08791924473655657"/>
+      <NumericPredictor name="Mean(Leadtime)" coefficient="-7.821436499962557E12"/>
+      <NumericPredictor name="Mean(Leadtime)" exponent="2" coefficient="3.953895489872316E10"/>
+      <NumericPredictor name="Mean(Leadtime)" exponent="3" coefficient="-8.883324405564684E7"/>
+      <NumericPredictor name="Mean(Leadtime)" exponent="4" coefficient="74843.00828636698"/>
+    </RegressionTable>
+  </RegressionModel>
+</PMML>
